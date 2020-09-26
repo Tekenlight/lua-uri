@@ -27,15 +27,12 @@
     CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
     TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 --]]--------------------------------------------------------------------------
-
-
-
 
 -----------------------
 -- Intialize package --
 -----------------------
+CE = require("compat_env");
 
 local P = { }
 lunit = P
@@ -54,8 +51,8 @@ local error = error
 local setmetatable = setmetatable
 local rawset = rawset
 local orig_assert = assert
-local getfenv = getfenv
-local setfenv = setfenv
+local getfenv = CE.getfenv
+local setfenv = CE.setfenv
 local tostring = tostring
 
 
@@ -450,10 +447,10 @@ function run()
   -- Count Test Cases and Tests --
   --------------------------------
   
-  stats.testcases = table.getn(testcases)
+  stats.testcases = #(testcases)
   
   for _, tc in ipairs(testcases) do
-    stats_inc("tests" , table.getn(tc.__lunit_tests))
+    stats_inc("tests" , #(tc.__lunit_tests))
   end
   
   ------------------
@@ -570,7 +567,7 @@ function run_testcase(tc)
   ---------------------------------
   
   print()
-  print("#### Running '"..tc.__lunit_name.."' ("..table.getn(tc.__lunit_tests).." Tests)...")
+  print("#### Running '"..tc.__lunit_name.."' ("..#(tc.__lunit_tests).." Tests)...")
   
   for _, testname in ipairs(tc.__lunit_tests) do
     if setup() then

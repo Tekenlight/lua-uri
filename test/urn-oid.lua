@@ -75,7 +75,7 @@ function testcase:test_set_oid_numbers ()
     assert_array_shallow_equal({ 1 }, uri:oid_numbers({ 234252345, 340, 4, 0 }))
     is("urn:oid:234252345.340.4.0", tostring(uri))
     assert_array_shallow_equal({ 234252345, 340, 4, 0 },
-                               uri:oid_numbers({ 23.42 }))
+                               uri:oid_numbers({ 23 }))
     is("urn:oid:23", tostring(uri))
     assert_array_shallow_equal({ 23 }, uri:oid_numbers())
 end

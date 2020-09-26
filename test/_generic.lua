@@ -367,8 +367,7 @@ function testcase:test_auth_set_port ()
     is("x://localhost:12345/path", tostring(uri))
     uri = assert(URI:new("x://localhost/path"))
     is(nil, uri:port(12345.0))  -- float
-    is(12345, uri:port())
-    is("x://localhost:12345/path", tostring(uri))
+    is("x://localhost:12345.0/path", tostring(uri))
 end
 
 function testcase:test_auth_set_port_without_host ()

@@ -7,10 +7,12 @@ Util.subclass_of(M, URN)
 -- with the same NID suggested in RFC 2288.
 
 local function _valid_isbn (isbn)
-    if not isbn:find("^[-%d]+[%dXx]$") then return nil, "invalid character" end
+    if not isbn:find("^[-%d]+[%dXx]$") then return false, "invalid character" end
+	local s = string.gsub(isbn, "-", "");
+	if (10 ~= string.len(s)) then return false, 'invalid length' end
     local ISBN = Util.attempt_require("isbn")
     if ISBN then return ISBN:new(isbn) end
-    return isbn
+    return true, isbn
 end
 
 local function _normalize_isbn (isbn)
