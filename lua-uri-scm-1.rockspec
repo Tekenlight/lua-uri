@@ -1,7 +1,8 @@
 package = "lua-uri"
 version = "1.0.0-1"
 source = {
-   url = "git+https://github.com/Tekenlight/lua-uri"
+   url = "git+https://github.com/Tekenlight/lua-uri",
+   tag = "v1.0.0"
 }
 description = {
    summary = "This is a fork of the original https://github.com/LuaDist/lua-uri adopted for lua 5.3. The Lua-URI library is written in pure Lua.",
