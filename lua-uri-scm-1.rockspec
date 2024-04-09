@@ -4,7 +4,7 @@ source = {
    url = "git+https://github.com/Tekenlight/lua-uri"
 }
 description = {
-   summary = "The Lua-URI library is written in pure Lua.",
+   summary = "This is a fork of the original https://github.com/LuaDist/lua-uri adopted for lua 5.3. The Lua-URI library is written in pure Lua.",
    detailed = [[
 The Lua-URI library is written in pure Lua.  No C compilation is required
 to install it.]],
