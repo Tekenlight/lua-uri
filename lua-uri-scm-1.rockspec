@@ -1,5 +1,5 @@
 package = "lua-uri"
-version = "scm-1"
+version = "1.0.0-1"
 source = {
    url = "git+https://github.com/Tekenlight/lua-uri"
 }
