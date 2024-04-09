@@ -11,7 +11,9 @@ to install it.]],
    homepage = "https://github.com/Tekenlight/lua-uri",
    license = "MIT"
 }
-dependencies = {}
+dependencies = {
+   "lua >= 5.3",
+}
 build = {
    type = "builtin",
    modules = {
